@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block title %}{{story.title}}{% endblock %}
+{% block nav %}
+<li><a href="{% url 'stories' %}">Stories</a></li>
+<li><a href="{% url 'editor' %}">Write</a></li>
+{% if request.user.is_authenticated %}
+<li><a href="{% url 'logout' %}">Logout</a></li>
+{% else %}
+<li><a href="{% url 'login' %}">Login</a></li>
+<li><a href="{% url 'register' %}">Register</a></li>
+{% endif %} {% endblock %} {% block content %}
+<section class="banner sub">
+  <div class="story-title">
+    <h3>{{story.title}}</h3>
+    <p class="author">
+      Author:
+      <a href="/user/{{story.user}}"
+        >{{story.user.first_name}} {{story.user.last_name}}</a
+      >
+    </p>
+  </div>
+</section>
+
+<div class="story">
+  {% if request.user == story.user %}
+  <div class='controls'>
+    <a href="/user/{{story.user}}/{{story.id}}/delete/"><i class="fa-solid fa-trash"></i></a>
+    <a href="/user/{{story.user}}/{{story.id}}/editor/"><i class="fa-solid fa-pen-to-square"></i></a>
+  </div>
+  {% endif %}
+  <pre>{{story.Story}}</pre>
+</div>
+{% endblock %}

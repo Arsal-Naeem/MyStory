@@ -1,0 +1,730 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Poppins&family=Roboto&display=swap');
+
+:root {
+    --white: #fffaf4;
+    --extremeDark: linear-gradient(to top, #25343cfd, #131a1efd);
+    --dark: #0c1114;
+    --midTone: #342f2b;
+    --extremeLight: #cfbaaa;
+    --light: #D0B7A3;
+    --WARNING: #840101;
+    ;
+}
+
+
+* {
+    margin: 0;
+    pad: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--dark);
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 10;
+
+}
+
+header.sticky {
+    padding: 10px 80px;
+    background-image: var(--extremeDark);
+}
+
+.logo {
+    position: relative;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+    z-index: 10;
+}
+
+
+header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    margin: 0 10px;
+    position: relative;
+    list-style: none;
+}
+
+header ul li a {
+    position: relative;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--white);
+    letter-spacing: 2px;
+    font-weight: 300px;
+    transition: 0.15s;
+}
+
+header ul li a::after {
+    content: "";
+    height: 2px;
+    width: 0%;
+    background-color: var(--white);
+    display: block;
+    transition: 0.15s ease 0s, left 0.15s ease 0s;
+}
+
+header ul li a:hover::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: var(--white);
+    display: block;
+}
+
+.icon {
+    display: none;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(../Images/cover.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.sub {
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    background: url(../Images/stories.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.authentication {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(../Images/stories.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.editor {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(../Images/editor.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.banner div {
+    color: var(--white);
+}
+
+.main div {
+    width: 27rem;
+    margin: 0rem 0rem 0rem 12rem;
+}
+
+.sub div {
+    color: var(--light);
+    text-shadow: 2px 2px var(--midTone);
+}
+
+.banner h2 {
+    color: var(--light);
+    text-shadow: 2px 2px var(--midTone);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.sub h2 {
+    font-size: 7rem;
+}
+
+.sub h3 {
+    margin-top: 2rem;
+    font-size: 2.5rem;
+}
+
+.sub-title {
+    margin-bottom: 2rem;
+}
+
+.story-title {
+    max-width: 70vw;
+}
+
+.banner p {
+    font-size: 1.5rem;
+}
+
+.sub p {
+    font-size: 1.5rem;
+}
+
+.sub a {
+    color: var(--light);
+    text-decoration: none;
+}
+
+
+.banner q {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.author {
+    text-align: end;
+    margin-bottom: 2rem;
+}
+
+.button {
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 0.2rem 1rem;
+    background-color: transparent;
+    color: var(--light);
+    border: 2.5px solid var(--light);
+    border-radius: 6px;
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: var(--light);
+    color: black;
+}
+
+.stories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100vw;
+}
+
+.searchbar {
+    height: 25px;
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-image: linear-gradient(to right, #d1b29a56, #cfbaaa60);
+}
+
+.searchbar:focus {
+    outline: none !important;
+    background-image: linear-gradient(to right, #d1b29a9b, #cfbaaa9b);
+}
+
+button {
+    font-size: 19px;
+    color: var(--white);
+    border: none;
+    background: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.story-card {
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    color: var(--dark);
+    width: 350px;
+    margin: 1.25rem;
+    padding: 30px;
+    background-image: linear-gradient(to right, var(--extremeLight), var(--light), var(--extremeLight));
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.heading {
+    margin-bottom: 1.5rem;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    height: 55vh;
+    color: var(--extremeLight);
+}
+
+.error div {
+    width: 350px;
+    margin-top: 30px;
+}
+
+.error h2 {
+    margin-bottom: 10px;
+}
+
+.story-card .title {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.story-card .writer {
+    font-size: 1rem;
+}
+
+.story-card .text {
+    width: 100%;
+    font-size: 1.1rem;
+    height: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.story-card hr {
+    width: 100%;
+    border-color: var(--dark);
+    margin-bottom: 1.25rem;
+}
+
+.story-card a {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.story-card a::after {
+    content: "";
+    height: 3px;
+    width: 0%;
+    background-color: var(--dark);
+    display: block;
+    transition: 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+.story-card a:hover::after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    background-color: var(--dark);
+    display: block;
+}
+
+
+
+.story {
+    color: var(--dark);
+    text-decoration: none;
+    margin: 2rem 5rem;
+    padding: 1rem;
+    background-image: linear-gradient(to right, var(--light), var(--extremeLight));
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.controls {
+    display: flex;
+    justify-content: flex-end;
+    text-align: left;
+}
+
+.controls a {
+    color: var(--dark);
+    margin: 0 10px;
+    font-size: 1.75rem;
+}
+
+.controls a:hover {
+    color: var(--midTone);
+}
+
+.story pre {
+    font-family: 'Noto Serif', serif;
+    text-align: justify;
+    word-spacing: 4px;
+    padding: 2rem;
+    font-size: 1.4rem;
+    white-space: pre-line;
+}
+
+
+.errorlist,
+.messages {
+    list-style: none;
+    background: var(--WARNING);
+    text-align: center;
+    border-radius: 2px;
+    margin: 5px;
+    padding: 5px 2px;
+}
+
+.errorlist {
+    margin: 0;
+}
+
+.messages p {
+    font-size: 1rem;
+}
+
+.authentication-card {
+    margin: 108px 0 0 0;
+    max-width: 450px;
+}
+
+.card {
+    margin-bottom: 4rem;
+    background-image: linear-gradient(to right, var(--light), var(--extremeLight));
+}
+
+.edit-form {
+    width: 80%;
+}
+
+.card h3 {
+    font-size: 2rem;
+    color: var(--dark);
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--midTone);
+}
+
+.card form {
+    padding: 0 40px;
+}
+
+.txt_field {
+    position: relative;
+    border-bottom: 2px solid var(--midTone);
+    margin: 20px 0;
+}
+
+.txt_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt_field label {
+    color: var(--midTone);
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.txt_field span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--dark);
+    transition: 0.5s;
+}
+
+.txt_field input:focus~label,
+.txt_field input:valid~label {
+    top: -5px;
+    color: var(--dark);
+}
+
+.txt_field input:focus~span::before,
+.txt_field input:valid~span::before {
+    width: 100%;
+}
+
+.card input[type="submit"] {
+    width: 100%;
+    height: 40px;
+    border: none;
+    margin-bottom: 1.5rem;
+    color: var(--extremeLight);
+    background-color: var(--midTone);
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.card input[type="submit"]:hover {
+    color: var(--extremeLight);
+    background-color: var(--dark);
+}
+
+.card .alternate {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--midTone);
+}
+
+.alternate a {
+    font-weight: 900;
+    text-decoration: none;
+    color: var(--dark);
+}
+
+.alternate a:hover {
+    color: var(--WARNING);
+}
+
+#id_Story {
+    padding: 10px;
+    font-size: 1rem;
+    height: 60vh;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+    background-image: linear-gradient(to right, #ffffffab, #ffffff7e);
+}
+
+#id_Story:focus {
+    outline: none !important;
+    border-width: 2.5px;
+    border-color: var(--midTone);
+
+}
+
+.delete {
+    text-align: center;
+    width: 350px;
+    margin-bottom: 4rem;
+    background-image: linear-gradient(to right, var(--light), var(--extremeLight));
+}
+
+.delete form {
+    padding: 40px 40px;
+}
+
+.delete p {
+    padding-bottom: 30px;
+    color: var(--WARNING);
+}
+
+.delete-cancel {
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    transition-duration: 0.4s
+}
+
+.confirmation {
+    background-color: var(--WARNING);
+    color: var(--extremeLight);
+    border: 2.5px solid var(--WARNING);
+    cursor: pointer;
+}
+
+.confirmation:hover {
+    border: 2.5px solid var(--dark);
+    color: var(--extremeLight);
+    background-color: var(--dark);
+}
+
+.cancellation {
+    margin-left: 10px;
+    background-color: transparent;
+    color: var(--dark);
+    border: 2.5px solid var(--dark);
+}
+
+.cancellation:hover {
+    color: var(--extremeLight);
+    background-color: var(--dark);
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 30px 40px;
+    }
+
+    header.sticky {
+        padding: 7px 30px;
+    }
+
+    .topnav li {
+        display: none;
+    }
+
+    .icon {
+        z-index: 10;
+        display: block;
+    }
+
+    .topnav.responsive {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 100vh;
+        width: 100vw;
+        background-image: var(--extremeDark);
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 200px 0px;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive li {
+        position: sticky;
+        display: block;
+    }
+
+    .topnav.responsive li a {
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
+
+    /* Home Page */
+
+    .main,
+    .sub {
+        background: url(../Images/cover-mobile.jpg);
+        background-size: cover;
+    }
+
+    header.sticky ul li a,
+    header.sticky .logo {
+        color: var(--white);
+    }
+
+    .main {
+        align-items: center;
+    }
+
+    .main div {
+        width: 80%;
+        margin: 0;
+    }
+
+    .main h2 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1.25rem;
+    }
+
+    .author {
+        margin-top: 10px;
+    }
+
+    a.button {
+        color: rgb(215, 197, 184);
+        font-weight: 700;
+        background: #453e3970;
+        border-color: #cfbaaa56;
+    }
+
+    /* Stories Page */
+
+    .sub h2 {
+        margin-top: 3rem;
+        font-size: 4rem;
+    }
+
+    .story-card {
+        width: 300px;
+    }
+
+    .error div {
+        text-align: center;
+    }
+
+    /* Story Page */
+
+    .story-title {
+        margin-top: 2.5rem;
+    }
+
+    .story-title h3 {
+        font-size: 2rem;
+    }
+
+    .story-title .author {
+        font-size: 1rem;
+    }
+
+    .sub div {
+        text-shadow: 1.25px 1px var(--midTone);
+    }
+
+    .story {
+        margin: 1rem 0.5rem;
+    }
+
+    .controls {
+        margin-bottom: 1rem;
+    }
+
+    .controls a {
+        margin: 0 0.5rem;
+        font-size: 2rem;
+    }
+
+    .story pre {
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    /* Authentication page */
+
+    .authentication-card {
+        max-width: 350px;
+    }
+
+    /* Editor page */
+    .edit-form {
+        margin-bottom: 30px;
+        width: 95%;
+    }
+
+    .edit-form form {
+        padding: 0 10px;
+    }
+}

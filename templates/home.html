@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block title %}My Story{% endblock %}
+{% block nav %}<li><a href="{% url 'stories' %}">Stories</a></li><li><a href="{% url 'editor' %}">Write</a></li>{% if request.user.is_authenticated %}
+<li><a href="{% url 'logout' %}">Logout</a></li>
+{% else %}
+<li><a href="{% url 'login' %}">Login</a></li>
+<li><a href="{% url 'register' %}">Register</a></li>
+{% endif %} {% endblock %}
+{% block content %}
+<section class="banner main">
+  <div>
+    <h2>Hi, we're MyStory.</h2>
+    <p class="sub-title">A simple Story Sharing Platform</p>
+    <q>Storytelling is the most powerful way to put ideas into the world</q>
+    <p class="author">-Robert McKee</p>
+    <a href="{% url 'register' %}" class="button">Get Started</a>  
+  </div>
+  
+</section>
+{% endblock %}

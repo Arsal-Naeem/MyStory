@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block title %}Stories{% endblock %}
+
+{% block nav %}
+<li><a href="{% url 'stories' %}">Stories</a></li>
+<li><a href="{% url 'logout' %}">Logout</a></li>
+{% endblock %}
+
+{% block content %}
+<section class="banner authentication">
+<div class="delete">
+<form method="POST" action="">
+  {% csrf_token %}
+
+  <p>Are you Sure you Want to Delete "{{story}}"</p>
+  <input type="submit" value="Delete" class='delete-cancel confirmation'/>
+  <a href="{{request.META.HTTP_REFERER}}" class='delete-cancel cancellation'>Cancel</a>
+</form>
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block title %}Stories{% endblock %} {% block nav %}
+<li><a href="{% url 'editor' %}">Write</a></li>
+{% if request.user.is_authenticated %}
+<li><a href="{% url 'logout' %}">Logout</a></li>
+{% else %}
+<li><a href="{% url 'login' %}">Login</a></li>
+<li><a href="{% url 'register' %}">Register</a></li>
+{% endif %}{% endblock %} {% block content %}
+<section class="banner sub">
+  <div>
+    <h2>Stories</h2>
+  </div>
+  <div class="search-container">
+    <form method="GET" action={% url 'stories' %}>
+      <input type="text" name="q" placeholder="Search stories..." class="searchbar">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+
+</section>
+{%if stories%}
+<div class="stories">
+  {% for story in stories %}
+  <div class="story-card">
+    <div class="heading">
+      <h4 class="title">{{story.title}}</h4>
+      <p class="writer">
+        by {{story.user.first_name}} {{story.user.last_name}}
+      </p>
+    </div>
+    <p class="text">{{story.Story|truncatechars:200}}</p>
+    <hr />
+    <a href="/user/{{story.user}}/{{story.id}}/">Read Full</a>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="error">
+  <div>
+    <h2>Hmmm...there are no results</h2>
+    <p>Try a different search to see if we can find you some stories to read</p>
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}
