@@ -12,6 +12,9 @@ from django.db.models import Q
 
 
 def home(request):
+    if request.user.is_authenticated:
+        return redirect('stories')
+
     stories = Story.objects.all()
     context = {
         'stories' : stories
